@@ -1,13 +1,13 @@
 
 const fork = (list) => {
   const stem = [ {} ]
-  list.forEach(({ i, o }) => {
+  list.forEach(({ i, x, o }) => {
     let link = stem
     for (let k = 0, n = i.length; k < n; k++) {
       let note = i[k]
       link = link[0][note] = link[0][note] || [ {}, null ]
     }
-    link[1] = { i, o }
+    link[1] = { i, x, o }
   })
   return stem
 }
